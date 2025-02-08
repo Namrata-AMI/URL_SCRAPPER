@@ -1,0 +1,32 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar{
+    height:5rem !important;
+    border-bottom: 1px solid rgb(148, 143, 143) ;
+}
+
+.navbar-brand{
+    color:cadetblue;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.container{
+  flex:1;
+  justify-content: center;
+  background-color: rgb(200, 217, 218);
+  padding: 1rem;
+  margin: 1rem;
+  border: 10px solid cadetblue;
+  border-radius: 10rem;
+}
+
+.inner{
+    margin: 10rem;
+}
+
