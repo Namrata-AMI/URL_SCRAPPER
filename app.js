@@ -23,23 +23,23 @@ app.get("/", (req, res) => {
 
 
 async function examp() {
-  const url = "https://example.com";
-  const data = await scrapeMetadata(url);
-  console.log(data);
+    const url = "https://example.com";
+    const data = await scrapeMetadata(url);
+    console.log("Scraped data from URL:", data);
 }
-
-examp();
-
-
+  
 app.post("/upload", upload.single("file"), async (req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ error: "No file uploaded" });
-  }
-  const filePath = req.file.path;
-  const jobId = await scrapeMetadata(filePath); 
-  res.json({ message: "File uploaded successfully!", jobId });
-});
-
+    if (!req.file) {
+      return res.status(400).json({ error: "No file uploaded" });
+    }
+  
+    console.log("Uploaded file path:", req.file.path);  
+  
+    const filePath = req.file.path;
+    const jobId = await scrapeMetadata(filePath); 
+    res.json({ message: "File uploaded successfully!", jobId });
+  });
+  
 app.get("/metadata", async (req, res) => {
   try {
     const metadata = await MetaData.find();
